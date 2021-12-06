@@ -1,0 +1,13 @@
+.card-block {
+  max-width: 500px;
+  color: #df928e;
+  .info-block {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 100px 2fr 1fr;
+  }
+  .item-name,
+  .item-price {
+    color: #c58882;
+  }
+}

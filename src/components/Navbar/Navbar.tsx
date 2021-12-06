@@ -2,10 +2,12 @@ import React from "react";
 
 import { NavLink } from "react-router-dom";
 
+import "./navbar.scss";
+
 const NavbarDesktop = () => {
   return (
-    <nav className="navbar-desktop">
-      <ul>
+    <nav className="navbar">
+      <ul className="container">
         <li>
           <NavLink to="/">List</NavLink>
         </li>
