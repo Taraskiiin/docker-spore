@@ -3,13 +3,11 @@ import { useDispatch } from "react-redux";
 
 import { IProduct } from "../../interface";
 
-import "./card.scss";
-
-const Card: React.FC<IProduct> = (el) => {
+const ChoosingCard: React.FC<IProduct> = (el) => {
   const dispatch = useDispatch();
   const AddToCart = () => {
     dispatch({
-      type: "ADD_ITEM",
+      type: "REMOVE_ITEM",
       payload: el,
     });
   };
@@ -17,14 +15,12 @@ const Card: React.FC<IProduct> = (el) => {
     <div className="card-block">
       <div className="info-block">
         <h3 className="item-name">{el.name}</h3>
-        <p>Description: {el.label}</p>
-        <p className="item-price">Price: {el.price}</p>
       </div>
       <button className="btn-buy" onClick={() => AddToCart()}>
-        ADD TO CART
+        REMOVE FROM CART
       </button>
     </div>
   );
 };
 
-export default Card;
+export default ChoosingCard;

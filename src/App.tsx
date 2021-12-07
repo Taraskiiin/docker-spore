@@ -1,5 +1,7 @@
 import React from "react";
+import { Provider } from "react-redux";
 
+import store from "./redux/store";
 import Router from "./Router/Router";
 
 import "./styles/reset.scss";
@@ -32,7 +34,11 @@ const defaultState = [
 localStorage.setItem("items", JSON.stringify(defaultState));
 
 const App: React.FC = () => {
-  return <Router />;
+  return (
+    <Provider store={store()}>
+      <Router />
+    </Provider>
+  );
 };
 
 export default App;

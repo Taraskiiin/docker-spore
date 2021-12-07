@@ -8,11 +8,11 @@ const NavbarDesktop = () => {
   return (
     <nav className="navbar">
       <ul className="container">
-        <li>
-          <NavLink to="/">List</NavLink>
+        <li className="nav__btn">
+          <NavLink to="/">Store</NavLink>
         </li>
-        <li>
-          <NavLink to="/cart">Cart</NavLink>
+        <li className="nav__btn">
+          <NavLink to="/cart">cart</NavLink>
         </li>
       </ul>
     </nav>
