@@ -1,0 +1,30 @@
+.navbar {
+  height: 50px;
+  padding: 22px 30px 0 30px;
+  background-color: #1d201f;
+  margin-bottom: 20px;
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.nav__btn {
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    background: #1d201f;
+    color: #ead2ac;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 0.5px;
+    outline: 0;
+    border-radius: 10px;
+    font-weight: bold;
+    &:hover {
+      background: #ead2ac;
+      color: #1d201f;
+      box-shadow: 0 0 5px, 0 0 25px #ead2ac, 0 0 50px #ead2ac, 0 0 100px #ead2ac;
+    }
+  }
+}

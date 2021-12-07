@@ -2,15 +2,17 @@ import React from "react";
 
 import { NavLink } from "react-router-dom";
 
+import "./navbar.scss";
+
 const NavbarDesktop = () => {
   return (
-    <nav className="navbar-desktop">
-      <ul>
-        <li>
-          <NavLink to="/">List</NavLink>
+    <nav className="navbar">
+      <ul className="container">
+        <li className="nav__btn">
+          <NavLink to="/">Store</NavLink>
         </li>
-        <li>
-          <NavLink to="/cart">Cart</NavLink>
+        <li className="nav__btn">
+          <NavLink to="/cart">cart</NavLink>
         </li>
       </ul>
     </nav>

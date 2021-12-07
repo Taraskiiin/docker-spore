@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import ReactLoading from "react-loading";
+import Card from "../../components/Card/Card";
+
 import { IProduct } from "../../interface";
 
 const List: React.FC = () => {
@@ -8,10 +11,17 @@ const List: React.FC = () => {
     setItems(itemStringArray ? JSON.parse(itemStringArray) : []);
   }, []);
   return (
-    <div>
-      {items.map((item) => (
-        <div>{item.name}</div>
-      ))}
+    <div className="container">
+      {items ? (
+        items.map((el) => <Card {...el} />)
+      ) : (
+        <ReactLoading
+          type={"cylon"}
+          color={"#fff"}
+          height={"20%"}
+          width={"20%"}
+        />
+      )}
     </div>
   );
 };

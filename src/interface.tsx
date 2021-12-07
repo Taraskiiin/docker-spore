@@ -5,3 +5,7 @@ export interface IProduct {
   label: string;
   price: number;
 }
+export interface IChoosingEl {
+  name: string;
+  count: number;
+}
