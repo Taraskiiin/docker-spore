@@ -1,0 +1,27 @@
+.cart-section {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.list-block {
+  display: flex;
+  flex-direction: column;
+}
+.btn_approve {
+  height: 30px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: #1d201f;
+  color: #ead2ac;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 0.5px;
+  border-radius: 10px;
+  font-weight: bold;
+  &:hover {
+    background: #ead2ac;
+    color: #1d201f;
+    box-shadow: 0 0 5px, 0 0 25px #1d201f, 0 0 50px #1d201f, 0 0 100px #1d201f;
+  }
+}

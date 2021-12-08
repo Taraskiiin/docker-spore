@@ -7,7 +7,7 @@ import "./navbar.scss";
 const NavbarDesktop = () => {
   return (
     <nav className="navbar">
-      <ul className="container">
+      <ul className="container_navbar">
         <li className="nav__btn">
           <NavLink to="/">Store</NavLink>
         </li>

@@ -1,7 +1,8 @@
 .card-block {
-  max-width: 500px;
-  color: #df928e;
-  .btn-buy {
+  max-width: 30px;
+  display: flex;
+  align-items: center;
+  .btn-remove {
     opacity: 0;
     transition: opacity 0.05s ease-in-out;
     pointer-events: unset;
@@ -10,21 +11,12 @@
     background-color: inherit;
     cursor: pointer;
   }
-  &:hover .btn-buy {
+  &:hover .btn-remove {
     opacity: 0.3;
     transition: opacity 0.25s ease-in-out;
   }
-  &:hover .btn-buy:hover {
+  &:hover .btn-remove:hover {
     opacity: 0.8;
     transition: opacity 0.25s ease-in-out;
-  }
-  .info-block {
-    padding: 15px;
-    display: grid;
-    grid-template-columns: 100px 2fr 1fr;
-  }
-  .item-name,
-  .item-price {
-    color: #c58882;
   }
 }

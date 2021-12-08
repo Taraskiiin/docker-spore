@@ -1,22 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-
 import ChoosingCard from "../../components/ChoosingCard/ChoosingCard";
-import ReactLoading from "react-loading";
-import { IProduct, IChoosingEl } from "../../interface";
+import { IProduct } from "../../interface";
+import "./cart.scss";
 
 const Cart: React.FC = () => {
-  const [total, setTotal] = useState<number>(0);
+  const [totalPrice, setTotalPrice] = useState<number>(0);
+
   const items = useSelector(
-    (state: { cart: { items: IProduct[] } }) => state.cart.items
+    (state: { cart: { items: { item: IProduct; count: number }[] } }) =>
+      state.cart.items
   );
-  let totalPrice = items.reduce((acc, num) => acc + num.price, 0);
+  const total = items.length
+    ? items.reduce((acc, num) => acc + num.item.price * num.count, 0)
+    : 0;
   return (
     <div className="container">
-      {items.map((el, index) => (
-        <ChoosingCard {...el} />
-      ))}
-      <button onClick={() => console.log(totalPrice)}>Penis</button>
+      <section className="cart-section">
+        <div className="list-block">
+          {items.length
+            ? items.map((el, i) => (
+                <ChoosingCard key={i} product={el.item} count={el.count} />
+              ))
+            : null}
+        </div>
+        <p className="total">Total: {total}</p>
+      </section>
     </div>
   );
 };

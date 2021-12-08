@@ -1,23 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
+import { ImCross } from "react-icons/im";
 import { useDispatch } from "react-redux";
-
 import { IProduct } from "../../interface";
+import "./choosingCard.scss";
 
-const ChoosingCard: React.FC<IProduct> = (el) => {
+interface IChoosingCardProps {
+  product: IProduct;
+  count: number;
+}
+
+const ChoosingCard: React.FC<IChoosingCardProps> = ({ product, count }) => {
   const dispatch = useDispatch();
   const AddToCart = () => {
     dispatch({
       type: "REMOVE_ITEM",
-      payload: el,
+      payload: product,
     });
   };
   return (
     <div className="card-block">
       <div className="info-block">
-        <h3 className="item-name">{el.name}</h3>
+        <h3 className="item-name">{product.name}</h3>
+        <p>Count: {count}</p>
       </div>
-      <button className="btn-buy" onClick={() => AddToCart()}>
-        REMOVE FROM CART
+      <button className="btn-remove" onClick={() => AddToCart()}>
+        <ImCross />
       </button>
     </div>
   );

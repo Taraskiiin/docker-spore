@@ -6,21 +6,19 @@ import { IProduct } from "../../interface";
 
 const List: React.FC = () => {
   const [items, setItems] = useState<IProduct[]>([]);
+
   useEffect(() => {
     const itemStringArray = localStorage.getItem("items");
+
     setItems(itemStringArray ? JSON.parse(itemStringArray) : []);
   }, []);
+
   return (
     <div className="container">
       {items ? (
-        items.map((el) => <Card {...el} />)
+        items.map((el, i) => <Card key={i} product={el} />)
       ) : (
-        <ReactLoading
-          type={"cylon"}
-          color={"#fff"}
-          height={"20%"}
-          width={"20%"}
-        />
+        <ReactLoading type="cylon" color="#fff" height="20%" width="20%" />
       )}
     </div>
   );
