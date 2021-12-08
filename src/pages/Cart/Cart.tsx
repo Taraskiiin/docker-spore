@@ -6,7 +6,6 @@ import "./cart.scss";
 
 const Cart: React.FC = () => {
   const [totalPrice, setTotalPrice] = useState<number>(0);
-
   const items = useSelector(
     (state: { cart: { items: { item: IProduct; count: number }[] } }) =>
       state.cart.items
