@@ -12,7 +12,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ product }) => {
   const dispatch = useDispatch();
-  const AddToCart = () => {
+  const addToCart = () => {
     dispatch({
       type: "ADD_ITEM",
       payload: product,
@@ -26,7 +26,7 @@ const Card: React.FC<CardProps> = ({ product }) => {
         <p>Description: {product.label}</p>
         <p className="item-price">Price: {product.price}</p>
       </div>
-      <button className="btn-buy" onClick={() => AddToCart()}>
+      <button className="btn-buy" onClick={addToCart}>
         <BsPlusLg />
       </button>
     </div>

@@ -11,7 +11,7 @@ interface IChoosingCardProps {
 
 const ChoosingCard: React.FC<IChoosingCardProps> = ({ product, count }) => {
   const dispatch = useDispatch();
-  const AddToCart = () => {
+  const deleteFromCart = () => {
     dispatch({
       type: "REMOVE_ITEM",
       payload: product,
@@ -23,7 +23,7 @@ const ChoosingCard: React.FC<IChoosingCardProps> = ({ product, count }) => {
         <h3 className="item-name">{product.name}</h3>
         <p>Count: {count}</p>
       </div>
-      <button className="btn-remove" onClick={() => AddToCart()}>
+      <button className="btn-remove" onClick={deleteFromCart}>
         <ImCross />
       </button>
     </div>

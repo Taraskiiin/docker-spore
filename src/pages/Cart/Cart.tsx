@@ -5,19 +5,19 @@ import { IProduct } from "../../interface";
 import "./cart.scss";
 
 const Cart: React.FC = () => {
-  const [totalPrice, setTotalPrice] = useState<number>(0);
   const items = useSelector(
     (state: { cart: { items: { item: IProduct; count: number }[] } }) =>
       state.cart.items
   );
-  const total = items.length
+
+  const total = items?.length
     ? items.reduce((acc, num) => acc + num.item.price * num.count, 0)
     : 0;
   return (
     <div className="container">
       <section className="cart-section">
         <div className="list-block">
-          {items.length
+          {items?.length
             ? items.map((el, i) => (
                 <ChoosingCard key={i} product={el.item} count={el.count} />
               ))
